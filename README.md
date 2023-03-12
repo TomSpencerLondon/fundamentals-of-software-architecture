@@ -13,14 +13,32 @@ Everything in software architecture is a trade-off
 
 ## Chapter 2: Architectural Thinking
 #### 1. Describe the traditional approach of architecture versus development and explain why that approach no longer works 
-The traditional view of architecture separates between the architect who is in charge of 
+The traditional view of architecture separates between the architect and the developer. The architect is in charge of analysing business requirements for "ilities", selecting which architecture patterns and styles would fit the problem domain and creating components (the building blocks of the system). The developer is in charge of class design, the user interface and the source code.
+![image](https://user-images.githubusercontent.com/27693622/224566907-2153b69e-5a8d-469d-a67a-b3358fe966ef.png)
+ 
 #### 2. List the three levels of knowledge in the knowledge triangle and provide an example of each.
+Stuff you know, Stuff you know you don't know and Stuff you don't know you don't know.
+![image](https://user-images.githubusercontent.com/27693622/224566962-af6e3eb4-9ef1-4c68-b389-f5b80e9fe9bd.png)
+Stuff you know includes technologies, frameworks, languages and tools a technologist uses every day to perform their job, such as knowing Java as a Java programmer. Stuff you know you don't know includes things 
+a technologist knows a little about but has little or no experience. For instance the Clojure programming language. Stuff you don't know you don't know is the largest part of the knowledge triangle and includes the entire host of technologies, tools and frameworks that would be a perfect solutoin to a problem but the technologist doesn't know these things exist.
+
 #### 3. Why is it more important for an architect to focus on technical breadth rather than technical breadth?
+Architects make decisions that match capabilities to technical constraints so a broad understanding of a wide range of solutions is valuable.
+
 #### 4. What are some of the ways of maintaining your technical depth and remaining hands-on as an architect?
+- proof of concept work
+- tackle technical debt stories
+- Bug fixes
+- Leveraging automation
+
 ## Chapter 3: Modularity
 #### 1. What is meant by the term connascence?
+"Two components are connascent if a change in one would require the other to be modified in order to maintain the overall correctness of the system." Meillir Page-Jones
 #### 2. What is the difference between static and dynamic connascence connascence?
+- static connascence - code level coupling includes connascence of name, type, meaning, position and algorithm
+- dynamic connascence - runtime connascence of execution, timing, values, identity
 #### 3. What does connascence of type mean? Is it static or dynamic connascence?
+
 #### 4. What is the weakest form of connascence?
 #### 5. Which is preferred within a code base -- static or dynamic connascence?
 
