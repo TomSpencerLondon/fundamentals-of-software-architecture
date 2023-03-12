@@ -40,12 +40,28 @@ Architects make decisions that match capabilities to technical constraints so a 
 - static connascence - code level coupling includes connascence of name, type, meaning, position and algorithm
 - dynamic connascence - runtime connascence of execution, timing, values, identity
 #### 3. What does connascence of type mean? Is it static or dynamic connascence?
-
+Connascence of type is static connascence. Multiple components must agree on the type of an entity.
 #### 4. What is the weakest form of connascence?
-#### 5. Which is preferred within a code base -- static or dynamic connascence?
+Connascence of identity - when several vales relate on one another and must change together.
+
+#### 5. What is the strongest form of connascence?
+Connascence of name - multiple components must agree on the name of an entity.
+
+![image](https://user-images.githubusercontent.com/27693622/224568929-888ee223-9bf2-4a9b-a921-d8b49899ff65.png)
+
+
+#### 6. Which is preferred within a code base -- static or dynamic connascence?
+Architects should prefer static connascence to dynamic because developers can determine it by simple source code analysis and modern tools make it trivial to improve static connascence.
 
 ## Chapter 4: Architecture Characteristics Defined
 #### 1. What three criteria must an attribute meet to be considered an architecture characteristic?
+- specifies a nondomain design consideration
+- influences some structural aspect of the design
+- is critical or important to application success
+
+![image](https://user-images.githubusercontent.com/27693622/224569093-7b595266-c406-4792-881a-60abca26602c.png)
+
+
 #### 2. What is the difference between an implicit characteristic and an explicit one? (Provide an example of each)
 #### 3. Provide an example of an operational characteristic
 #### 4. Provide an example of a structural characteristic
