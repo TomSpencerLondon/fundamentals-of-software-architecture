@@ -18,7 +18,9 @@ The traditional view of architecture separates between the architect and the dev
  
 #### 2. List the three levels of knowledge in the knowledge triangle and provide an example of each.
 Stuff you know, Stuff you know you don't know and Stuff you don't know you don't know.
+
 ![image](https://user-images.githubusercontent.com/27693622/224566962-af6e3eb4-9ef1-4c68-b389-f5b80e9fe9bd.png)
+
 Stuff you know includes technologies, frameworks, languages and tools a technologist uses every day to perform their job, such as knowing Java as a Java programmer. Stuff you know you don't know includes things 
 a technologist knows a little about but has little or no experience. For instance the Clojure programming language. Stuff you don't know you don't know is the largest part of the knowledge triangle and includes the entire host of technologies, tools and frameworks that would be a perfect solutoin to a problem but the technologist doesn't know these things exist.
 
