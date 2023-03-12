@@ -247,18 +247,35 @@ same time. We gave testability a two-star rating (rather than one star) due to t
 stub components (or even an entire layer), which eases the overall testing effort.
 
 #### 6. Why isn’t agility well supported in the layered architecture style?
-
+Monolithic layered architectures can quickly become more complex as they get bigger making development less agile.
 
 ## Chapter 11: Pipeline Architecture
 #### 1. Can pipes be bidirectional in a pipeline architecture?
+Pipes are unidirectional in a pipeline architecture.
+
 #### 2. Name the four types of filters and their purpose.
+Producer - source, Transformer - transforms data, Tester - tests one or more criteria, consumer - termination point of the pipeline.
+
 #### 3. Can a filter send data out through multiple pipes?
+
 #### 4. Is the pipeline architecture style technically partitioned or domain partitioned?
+The pipeline architecture style is a technically partitioned architecture due to the partitioning of
+application logic into filter types (producer, tester, transformer, and consumer).
+
 #### 5. In what way does the pipeline architecture support modularity?
+
+Overall cost and simplicity combined with modularity are the primary strengths of the pipeline
+architecture style.
+
 #### 6. Provide two examples of the pipeline architecture style.
+
 ## Chapter 12: Microkernel Architecture
 #### 1. What is another name for the microkernel architecture style?
+It is also known as the plug-in architecture.
+
 #### 2. Under what situations is it OK for plug-in components to be dependent on other plug-in components?
+
+
 #### 3. What are some of the tools and frameworks that can be used to manage plug-ins?
 #### 4. What would you do if you had a third-party plug-in that didn’t conform to the standard plugin contract in the core system?
 #### 5. Provide two examples of the microkernel architecture style.
