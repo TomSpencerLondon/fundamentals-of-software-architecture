@@ -61,21 +61,51 @@ Architects should prefer static connascence to dynamic because developers can de
 
 ![image](https://user-images.githubusercontent.com/27693622/224569093-7b595266-c406-4792-881a-60abca26602c.png)
 
-
 #### 2. What is the difference between an implicit characteristic and an explicit one? (Provide an example of each)
+
+Implicit characteristics influence some structural aspect of the design.Security is a concern in every project and all systems make baseline precautions. Other implicit architecture characteristics might include
+availability and reliability. Explicit characteristics would appear in requirements documents or other specific instructions.
+
 #### 3. Provide an example of an operational characteristic
+Operational characteristics include Availability, Continuity, Performance, Recoverability, Reliability / safety, Robustness, Scalability.
+
 #### 4. Provide an example of a structural characteristic
+Structural characteristics would include configurability, extensibility, installability, leverageability / reuse, localization, portability and supportability.
+
 #### 5. Provide an example of a cross-cutting characteristic
+Cross cutting architecture characteristics would include accessibility, achivability, authentication, authorization, legal, privacy, security, supportability, usability / achievability
+
 #### 6. Which architecture characteristic is more important to strive for -- availability or performance?
+Architects need to consider availability and performance as equally important.
+
 ## Chapter 5: Identifying Architecture Characteristics
 #### 1. Give a reason why it is a good practice to limit the number of characteristics ("-ilities") an architecture should support
+The emphasis should be on keeping the design simple as opposed to obsessing over the number of characteristics of a system
+
 #### 2. True or False: most architecture characteristics come from business requirements and user stories.
+Most architecture characteristics come from listening to key domain stakeholders and collaborating with them to determine what is important from a domain perspective.
+
 #### 3. If a business stakeholder states that time-to-market (i.e., getting new features and bug fixes pushed out to users as fast as possible) is the most important business concern, which architecture characteristics would the architecture need to support?
+
+Agility, testability, deployability.
+
 #### 4. What is the difference between scalability and elasticity?
+
+Scalability measures the performance of concurrent users. Elasticity is the ability of the system to withstand bursts of users.
+
 #### 5. You find out that your company is about to undergo several major acquisitions to significantly increase its customer base. Which architectural characteristics should you be worried about?
+Interoperability, scalability, adaptability, extensibility.
+
 ## Chapter 6: Measuring and Governing Architecture Characteristics
 #### 1. Why is cyclomatic complexity such an important metric to analyze for architecture?
+
+Removing cyclomatic complexity of a core system can allow for better extensibility and maintainability, as well as increased testability.
+
 #### 2. What is an architecture fitness function? How can they be used to analyze an architecture?
+
+
+
+
 #### 3. Provide an example of an architecture fitness function to measure the scalability of an architecture.
 #### 4. What is the most important criteria for an architecture characteristic to allow architects and developers to create fitness functions?
 ## Chapter 7: Scope of Architecture Characteristics
