@@ -48,7 +48,6 @@ Connascence of name - multiple components must agree on the name of an entity.
 
 ![image](https://user-images.githubusercontent.com/27693622/224568929-888ee223-9bf2-4a9b-a921-d8b49899ff65.png)
 
-
 #### 6. Which is preferred within a code base -- static or dynamic connascence?
 Architects should prefer static connascence to dynamic because developers can determine it by simple source code analysis and modern tools make it trivial to improve static connascence.
 
@@ -102,25 +101,111 @@ Removing cyclomatic complexity of a core system can allow for better extensibili
 
 #### 2. What is an architecture fitness function? How can they be used to analyze an architecture?
 
-
-
+Fitness functions protect and govern architectural characteristics as change occurs over time. 
 
 #### 3. Provide an example of an architecture fitness function to measure the scalability of an architecture.
+Measuring the ability of the system to perform and operate as the number of users or requests increases.
+
 #### 4. What is the most important criteria for an architecture characteristic to allow architects and developers to create fitness functions?
+
+Architects must ensure that developers understand the purpose of the fitness function before imposing it on them.
+
+Example hexagonal architecture fitness function using ArchUnit:
+```java
+
+@Tag("architecture")
+public class HexagonalArchitectureTest {
+
+    @Test
+    void domainMustNotDependOnAdapters() {
+        noClasses()
+                .that()
+                .resideInAPackage("..domain..")
+                .should()
+                .dependOnClassesThat()
+                .resideInAPackage("..adapter..")
+                .check(productionAndTestClasses());
+    }
+
+    @Test
+    public void domainMustNotDependOnApplication() {
+        noClasses()
+                .that()
+                .resideInAPackage("..domain..")
+                .should()
+                .dependOnClassesThat()
+                .resideInAPackage("..application..")
+                .check(productionAndTestClasses());
+    }
+
+    @Test
+    public void applicationMustNotDependOnAdapters() {
+        noClasses()
+                .that().resideInAPackage("..application..")
+                .should().dependOnClassesThat().resideInAPackage("..adapter..")
+                .check(productionAndTestClasses());
+    }
+
+    @Test
+    public void adaptersMustNotDependOnEachOther() {
+        slices().matching("..adapter.*.(*)..")
+                .should().notDependOnEachOther()
+                .as("Adapters must not depend on each other")
+                .check(productionAndTestClasses());
+    }
+
+
+    private JavaClasses productionAndTestClasses() {
+        return new ClassFileImporter().importPackages("com.tomspencerlondon.quiz");
+    }
+}
+
+```
+
 ## Chapter 7: Scope of Architecture Characteristics
+
 #### 1. What is an architectural quantum, and why is it important to architecture?
+
+An independently deployable artifact with high functional cohesion and synchronous connascence.
+
 #### 2. Assume a system consisting of a single user interface with four independently deployed services, each containing its own separate database. Would this system have a single quantum or four quanta? Why?
+
+The single user interface means that they still form one quantum.
+
 #### 3. Assume a system with an administration portion managing static reference data (such as the product catalog, and warehouse information) and a customer-facing portion managing the placement of orders. How many quanta should this system be and why? If you envision multiple quanta, could the admin quantum and customer-facing quantum share a database? If so, in which quantum would the database need to reside?
+
 ## Chapter 8: Component-Based Thinking
 #### 1. We define the term component as a building block of an application—something the application does. A component usually consist of a group of classes or source files. How are components typically manifested within an application or service?
+
+They are typically wrapped in a library which communicates via language function call mechanisms.
+
 #### 2. What is the difference between technical partitioning and domain partitioning? Provide an example of each.
+
+Technical partitioning divides the application according to presentation, business rules, service and persistence. Domain partitioning divides the system according to individual domains.
+
 #### 3. What is the advantage of domain partitioning?
+
+It is modeled more closely toward how the business functions rather than an implementation detail.
+
 #### 4. Under what circumstances would technical partitioning be a better choice over domain partitioning?
+
 #### 5. What is the entity trap? Why is it not a good approach for component identification?
+
+It is a component relatoinal mapping of a framework to a database rather than an architecture.
+
 #### 6. When might you choose the workflow approach over the Actor/Actions approach when identifying core components?
+
+To identify key roles and determine the kinds of workflows the roles enage in.
+
 ## Chapter 9: Architecture Styles
 #### 1. List the eight fallacies of distributed computing.
+The network is reliable, Latency is Zero, Bandwidth is infinite, The Network is secure, The Topology never changes, There is only one Administrator, Transport cost is zero, The network is homogeneous
+
 #### 2. Name three challenges that distributed architectures have that monolithic architectures don’t.
+
+Distributed logging, distributed transactions, contract maintenance and versioning
+
+
 #### 3. What is stamp coupling?
 #### 4. What are some ways of addressing stamp coupling?
 ## Chapter 10: Layered Architecture Style
