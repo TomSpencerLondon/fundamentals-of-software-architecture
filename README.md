@@ -1,5 +1,4 @@
 # Fundamentals of Software Architecture - M. Richards, N. Ford
-Questions
 
 ## Chapter 1: Introduction
 #### 1. What are the four dimensions that define software architecture? 
