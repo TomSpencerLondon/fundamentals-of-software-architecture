@@ -2,7 +2,7 @@
 Questions
 
 ## Chapter 1: Introduction
-1. What are the four dimensions that define software architecture? 
+#### 1. What are the four dimensions that define software architecture? 
 Architecture characteristics, Design Principles, Structure, Architecture Decisions
 2. What is the difference between an architecture decision and a design principle?
 A design principle differs from an architecture decision in that a design prinicple is a guideline rather than a hard and fast rule
