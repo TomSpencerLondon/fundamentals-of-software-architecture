@@ -207,14 +207,48 @@ Distributed logging, distributed transactions, contract maintenance and versioni
 
 
 #### 3. What is stamp coupling?
+Stamp coupling is a type of coupling in software engineering that occurs when one module depends on the internal representation or data structure of another module. In other words, it occurs when one module accesses the internal data of another module, either to read or modify it directly.
+
+This type of coupling is considered to be strong coupling, as changes in one module can have a significant impact on the other module. It also makes it difficult to change the internal data representation of one module without affecting the other module.
+
+The term "stamp coupling" originated from the practice of physically stamping data on a paper card, which was then read by a computer. In this scenario, each module had to be designed to read and interpret the stamped data from the other module's card.
+
+
 #### 4. What are some ways of addressing stamp coupling?
+- create private RESTful API endpionts
+- use field selectors in the contract
+- use GraphQL to decouple contracts
+- use value-driven contracts with consumer-driven contracts (CDCs)
+- use internal messaging endpoints
+
 ## Chapter 10: Layered Architecture Style
 #### 1. What is the difference between an open layer and a closed layer?
+In a closed-layered architecture a request originating from the presentation layer must first go through the business layer and then to the persistence layer before making it to the database layer.
+
 #### 2. Describe the layers of isolation concept and what the benefits are of this concept.
+Making the Services Layer open can allow the business layer to bypass the services layer and directly access the persistence layer.
+
 #### 3. What is the architecture sinkhole anti-pattern?
+This anti-pattern occurs when requests move from layer to layer as simple pass-through
+processing with no business logic performed within each layer.
+
 #### 4. What are some of the main architecture characteristics that would drive you to use a layered architecture?
+
+The layered architecture style is a good choice for small, simple applications or websites. It is also a
+good architecture choice, particularly as a starting point, for situations with very tight budget and
+time constraints.
+
 #### 5. Why isn’t testability well supported in the layered architecture style?
+
+The low testability rating also reflects this scenario; with a simple three-line change, most developers are not going to spend hours
+executing the entire regression test suite (even if such a thing were to exist in the first place),
+particularly along with dozens of other changes being made to the monolithic application at the
+same time. We gave testability a two-star rating (rather than one star) due to the ability to mock or
+stub components (or even an entire layer), which eases the overall testing effort.
+
 #### 6. Why isn’t agility well supported in the layered architecture style?
+
+
 ## Chapter 11: Pipeline Architecture
 #### 1. Can pipes be bidirectional in a pipeline architecture?
 #### 2. Name the four types of filters and their purpose.
